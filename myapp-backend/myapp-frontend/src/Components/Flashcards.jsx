@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
+import "./Flashcard.css"
 
 const flashcardsData = {
         'phonics-letter-sounds': [
@@ -252,13 +253,28 @@ const flashcardsData = {
         <div className="flashcard-list">
           {currentCards.map((flashcard, index) => (
             <div key={index} className="flashcard">
-              <h3>{flashcard.term}</h3>
-              <p>{flashcard.pronunciation}</p>
-              <img src={flashcard.image} alt={flashcard.term} />
-              <audio controls>
+              <div className="flashcard-inner">
+                {/* Front side of the card */}
+                <div className="flashcard-front">
+                  <h3>{flashcard.term}</h3>
+                </div>
+  
+                {/* Back side of the card */}
+                <div className="flashcard-back">
+                  <p>{flashcard.pronunciation}</p>
+                  <p>{flashcard.definition}</p>
+                {/* Conditionally render image if exists */}
+                {flashcard.image && <img src={flashcard.image} alt={flashcard.term} />}
+                  
+                {/* Conditionally render audio if exists */}
+                {flashcard.audio && (
+                <audio controls>
                 <source src={flashcard.audio} type="audio/mp3" />
                 Your browser does not support the audio element.
-              </audio>
+                 </audio>
+                  )}
+                </div>
+              </div>
             </div>
           ))}
         </div>
@@ -289,6 +305,6 @@ const flashcardsData = {
         </div>
       </div>
     );
-  };
+  };  
   
   export default Flashcards;
