@@ -18,10 +18,10 @@ const Home = () => {
   return (
     <div>
       <h1>Welcome to Norb's Learning</h1>
-      <h3>Your Interactive Learning Adventure Starts Here!</h3>
+      <h3>Teaching resources for all ages.</h3>
 
       <p>
-        Whether you're just starting with numbers and sounds or exploring advanced concepts, Norb's Learning offers a fun and engaging platform for learners of all ages.
+        Whether your students are just starting with numbers and sounds or exploring advanced concepts, Norb's Learning offers a fun and engaging resources for learners of all ages.
       </p>
 
       <div>
