@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import './EnglishPage.css'; // Add your CSS in a separate file
 
 const EnglishPage = () => {
@@ -11,31 +11,37 @@ const EnglishPage = () => {
       title: 'Phonics & Letter Sounds',
       description:
         'Learn to recognize and pronounce letter sounds, building the skills needed to read and write.',
+      id: 'phonics-letter-sounds',
     },
     {
       title: 'Building Vocabulary',
       description:
         'Expand your vocabulary by learning new words and their meanings through fun, interactive activities.',
+      id: 'building-vocabulary',
     },
     {
       title: 'Grammar & Sentence Structure',
       description:
         'Understand the parts of a sentence, punctuation rules, and how to write grammatically correct sentences.',
+      id: 'grammar-sentence-structure',
     },
     {
       title: 'Reading Comprehension',
       description:
         'Enhance your understanding of texts by practicing key skills like summarizing and finding main ideas.',
+      id: 'reading-comprehension',
     },
     {
       title: 'Creative & Academic Writing',
       description:
         'Learn to write creative stories or academic papers with structure, flow, and clarity.',
+      id: 'creative-academic-writing',
     },
     {
       title: 'Advanced Writing Techniques',
       description:
         'Explore advanced writing techniques such as persuasive writing, argumentation, and narrative skills.',
+      id: 'advanced-writing-techniques',
     },
   ];
 
@@ -66,10 +72,16 @@ const EnglishPage = () => {
           <div className="modal-content">
             <h2>{selectedTopic.title}</h2>
             <p>{selectedTopic.description}</p>
-            <div>
-              <h3>Games</h3>
-              <h3>Flashcards</h3>
-              <h3>Videos</h3>
+            <div className='activities'>
+              <h3>
+                <Link to={`/games/${selectedTopic.id}`} className="activity-link">Games</Link>
+              </h3>
+              <h3>
+                <Link to={`/flashcards/${selectedTopic.id}`} className="activity-link">Flashcards</Link>
+              </h3>
+              <h3>
+                <Link to={`/videos/${selectedTopic.id}`} className="activity-link">Videos</Link>
+              </h3>
             </div>
             <button onClick={() => setSelectedTopic(null)}>Close</button>
           </div>
