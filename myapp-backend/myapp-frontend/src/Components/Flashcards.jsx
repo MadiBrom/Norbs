@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 import "./Flashcard.css"
+import Navbar from './Navbar';
 
 const flashcardsData = {
         'phonics-letter-sounds': [
@@ -249,6 +250,7 @@ const flashcardsData = {
   
     return (
       <div>
+        <Navbar/>
         <h1>Flashcards for {topicId.replace('-', ' ')}</h1>
         <div className="flashcard-list">
           {currentCards.map((flashcard, index) => (
