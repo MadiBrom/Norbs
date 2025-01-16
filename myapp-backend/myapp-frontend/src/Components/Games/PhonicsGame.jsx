@@ -77,24 +77,24 @@ const PhonicsGame = () => {
                 value: 100, // Number of confetti particles
               },
               shape: {
-                type: 'circle', // Shape of confetti
+                type: 'circle', // Shape of particles
               },
               color: {
                 value: ['#ff0000', '#00ff00', '#0000ff', '#ffff00'], // Confetti colors
               },
               size: {
-                value: 5, // Size of the confetti particles
+                value: 5, // Particle size
                 random: true, // Random size
               },
               opacity: {
-                value: 0.7, // Transparency of confetti
+                value: 0.7, // Particle opacity
               },
               move: {
                 enable: true,
-                speed: 3, // Speed of falling confetti
-                direction: 'bottom', // Confetti falls down
+                speed: 3, // Falling speed
+                direction: 'bottom', // Falling direction
                 outModes: {
-                  bottom: 'none', // Confetti won't leave the canvas
+                  bottom: 'none', // Particles won't leave the screen
                 },
               },
             },
