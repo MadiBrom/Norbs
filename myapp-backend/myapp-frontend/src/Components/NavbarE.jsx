@@ -25,6 +25,9 @@ const Navbar = () => {
           <li>
             <Link to="/flashcards/advanced-writing-techniques">Advanced Writing Techniques</Link>
           </li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
         </ul>
       </div>
     </nav>

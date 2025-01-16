@@ -7,6 +7,7 @@ import AboutPage from './Components/AboutPage';
 import Games from './Components/Games';
 import Flashcards from './Components/Flashcards';
 import Videos from './Components/Videos';
+import Navbar from './Components/NavbarE';
 
 const App = () => {
   return (

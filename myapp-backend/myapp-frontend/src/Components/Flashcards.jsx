@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
 import "./Flashcard.css"
-import Navbar from './Navbar';
+import Navbar from './NavbarE';
 
 const flashcardsData = {
         'phonics-letter-sounds': [
