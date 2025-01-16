@@ -34,6 +34,7 @@ const phonicsData = [
 const PhonicsGame = () => {
   const [selectedCard, setSelectedCard] = useState(null);
   const [showConfetti, setShowConfetti] = useState(false);
+  const [congratsMessage, setCongratsMessage] = useState(false);
 
   const playSound = (sound) => {
     const audio = new Audio(sound);
@@ -50,7 +51,13 @@ const PhonicsGame = () => {
     const droppedCard = JSON.parse(e.dataTransfer.getData('card'));
     if (droppedCard.letter === letter) {
       setShowConfetti(true);
-      setTimeout(() => setShowConfetti(false), 2000); // Hide confetti after 2 seconds
+      setCongratsMessage(true);
+
+      // Hide confetti and message after 2 seconds
+      setTimeout(() => {
+        setShowConfetti(false);
+        setCongratsMessage(false);
+      }, 2000);
     } else {
       alert('Try again!');
     }
@@ -67,23 +74,28 @@ const PhonicsGame = () => {
           options={{
             particles: {
               number: {
-                value: 50,
+                value: 100, // Number of confetti particles
               },
               shape: {
-                type: 'triangle',
+                type: 'circle', // Shape of confetti
               },
               color: {
-                value: '#ff0000',
+                value: ['#ff0000', '#00ff00', '#0000ff', '#ffff00'], // Confetti colors
               },
               size: {
-                value: 5,
+                value: 5, // Size of the confetti particles
+                random: true, // Random size
               },
               opacity: {
-                value: 0.7,
+                value: 0.7, // Transparency of confetti
               },
               move: {
                 enable: true,
-                speed: 10,
+                speed: 3, // Speed of falling confetti
+                direction: 'bottom', // Confetti falls down
+                outModes: {
+                  bottom: 'none', // Confetti won't leave the canvas
+                },
               },
             },
             interactivity: {
@@ -96,6 +108,14 @@ const PhonicsGame = () => {
             },
           }}
         />
+      )}
+
+      {/* Congrats Modal */}
+      {congratsMessage && (
+        <div className="congrats-modal">
+          <h3>Congratulations!</h3>
+          <p>You matched the letter and sound correctly!</p>
+        </div>
       )}
 
       <div className="phonics-container">
