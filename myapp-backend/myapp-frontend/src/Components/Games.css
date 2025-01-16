@@ -125,4 +125,33 @@
     width: 50px;
     border: 2px dashed #bbb;
   }
+  .phonics-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .sounds, .letters {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card, .letter-target {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .card {
+    cursor: pointer;
+  }
+  
+  .letter-target {
+    min-height: 50px;
+    width: 50px;
+    border: 2px dashed #bbb;
+  }
   
