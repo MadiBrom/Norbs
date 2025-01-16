@@ -1,0 +1,128 @@
+/* Main game container */
+.games-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #f9f9f9;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+  }
+  
+  /* Header section */
+  .game-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .game-header h1 {
+    font-size: 2.5rem;
+    color: #333;
+  }
+  
+  .game-header p {
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
+  /* Main game content area */
+  .game-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+    max-width: 1200px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .game-area > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Sidebar (instructions panel) */
+  .game-sidebar {
+    flex: 1;
+    padding: 20px;
+    background: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+  }
+  
+  .game-sidebar h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .game-sidebar p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Footer section with navigation */
+  .game-footer {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1200px;
+    margin-top: 20px;
+  }
+  
+  .game-footer button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background: #5cb85c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .game-footer button:hover {
+    background: #4cae4c;
+  }
+  
+  .game-footer button:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+  }
+  .phonics-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .sounds, .letters {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card, .letter-target {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .card {
+    cursor: pointer;
+  }
+  
+  .letter-target {
+    min-height: 50px;
+    width: 50px;
+    border: 2px dashed #bbb;
+  }
+  
